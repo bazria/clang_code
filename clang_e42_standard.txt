@@ -1,0 +1,44 @@
+insert the standard header
+:Stdheader
+
+use libraries only if authorized and needed
+#include <unistd.h>
+
+insert comments this way only
+no comment in a function body
+/*
+** comment
+*/
+
+run the compiler
+gcc -Wall -Wextra -Werror file.c
+
+run the ecole42 normalization tool
+norminette -R CheckForbiddenSourceHeader file.c
+
+all function names aligned on tabs
+all variable names aligned on tabs
+
+function prototypes at the top
+main return type is int
+
+void	ft_whatever(void);
+
+int		main(void)
+{
+	whatever;
+	return (0);
+}
+
+name convention:
+only lowercase, figures and _
+enum		e_
+global		g_
+structure	s_
+typedef		t_
+union		u_
+
+pointer on type					p_type		variable = *p_type
+pointer on pointer				pp_type		variable = **pp_type
+pointer on pointer on pointer	ppp_type	variable = ***ppp_type
+
