@@ -6,7 +6,7 @@
 /*   By: bazria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 17:21:08 by bazria            #+#    #+#             */
-/*   Updated: 2017/02/17 18:49:44 by bazria           ###   ########.fr       */
+/*   Updated: 2017/02/28 17:26:37 by bazria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* original as it appears in openclassrooms */
@@ -15,9 +15,9 @@
 
 void echanger(int tableau[], int a, int b)
 {
-	    int temp = tableau[a];
-		    tableau[a] = tableau[b];
-			    tableau[b] = temp;
+    int temp = tableau[a];
+    tableau[a] = tableau[b];
+    tableau[b] = temp;
 }
 
 void quickSort(int tableau[], int debut, int fin)
