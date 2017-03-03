@@ -6,48 +6,54 @@
 /*   By: bazria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 17:21:08 by bazria            #+#    #+#             */
-/*   Updated: 2017/03/03 16:32:56 by bazria           ###   ########.fr       */
+/*   Updated: 2017/03/03 18:28:47 by bazria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* original as it appears in openclassrooms */
 
 #include <stdio.h>
 
-void echanger(int tableau[], int a, int b)
+void	swap(int table[], int index1, int index2);
+void	quickSort(int table[], int debut, int fin);
+
+void	swap(int table[], int index1, int index2)
 {
-    int temp = tableau[a];
-    tableau[a] = tableau[b];
-    tableau[b] = temp;
+	int	initial_value;
+
+    initial_value = table[index1];
+    table[index1] = table[index2];
+    table[index2] = initial_value;
 }
 
-void quickSort(int tableau[], int debut, int fin)
+void	quickSort(int table[], int debut, int fin)
 {
-	    int gauche = debut-1;
-		    int droite = fin+1;
-			    const int pivot = tableau[debut];
+    int gauche;
+    int droite;
+    int pivot;
 
-				    /* Si le tableau est de longueur nulle, il n'y a rien à faire. */
-				    if(debut >= fin)
-						        return;
+    gauche = debut - 1;
+    droite = fin + 1;
+    pivot = table[debut];
 
-					    /* Sinon, on parcourt le tableau, une fois de droite à gauche, et une
-						 *        autre de gauche à droite, à la recherche d'éléments mal placés,
-						 *               que l'on permute. Si les deux parcours se croisent, on arrête. */
-					    while(1)
-							    {
-									        do droite--; while(tableau[droite] > pivot);
-											        do gauche++; while(tableau[gauche] < pivot);
+    /* si la table est de longueur nulle, il n'y a rien à faire */
+    if (debut >= fin)
+	{
+        return;
+	}
 
-													        if(gauche < droite)
-																            echanger(tableau, gauche, droite);
-															        else break;
-																	    }
-
-						    /* Maintenant, tous les éléments inférieurs au pivot sont avant ceux
-							 *        supérieurs au pivot. On a donc deux groupes de cases à trier. On utilise
-							 *               pour cela... la méthode quickSort elle-même ! */
-						    quickSort(tableau, debut, droite);
-							    quickSort(tableau, droite+1, fin);
+    /* sinon, on parcourt la table, une fois de droite a gauche, et une fois de gauche a droite, */
+	/* a la recherche d'éléments mal places, que l'on permute. Si les deux parcours se croisent, on arrete. */
+    while(1)
+	{
+		do droite--; while(table[droite] > pivot);
+		do gauche++; while(table[gauche] < pivot);
+		if (gauche < droite)
+			swap(table, gauche, droite);
+		else break;
+	}
+	/* maintenant, tous les elements inferieurs au pivot sont avant ceux superieurs au pivot */
+	/* On a donc deux groupes de cases à trier. On utilise pour cela... la méthode quickSort elle-même ! */
+	quickSort(table, debut, droite);
+	quickSort(table, droite+1, fin);
 }
 
 int		main(void)
