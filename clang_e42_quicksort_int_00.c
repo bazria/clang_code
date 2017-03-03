@@ -6,7 +6,7 @@
 /*   By: bazria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 17:21:08 by bazria            #+#    #+#             */
-/*   Updated: 2017/02/28 17:26:37 by bazria           ###   ########.fr       */
+/*   Updated: 2017/03/03 16:32:56 by bazria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* original as it appears in openclassrooms */
@@ -61,6 +61,7 @@ int		main(void)
 		printf("%d", table[i]); printf("%s", " ");
 		i++;
 	}
+	printf("%s", "\n");
 	quickSort(table, 0, 9);
 	i = 0;
 	while (i < 10)
@@ -68,5 +69,6 @@ int		main(void)
 		printf("%d", table[i]); printf("%s", " ");
 		i++;
 	}
+	printf("%s", "\n");
 	return (0);
 }
